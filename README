@@ -1,0 +1,14 @@
+# VSCode Dev Container setup Example
+
+This is an example of how a devcontainer setup can look like.
+
+## Requirements
+
+- Docker CLI installed
+- VSCode with the Dev Containers Extension
+
+## How to run
+
+1. Clone this repository and open it in VSCode
+2. Open the Command Palette with `Ctrl+Shift+P`
+3. Run `>Dev Containers: Reopen in Container`
