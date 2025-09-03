@@ -12,3 +12,15 @@ This is an example of how a devcontainer setup can look like.
 1. Clone this repository and open it in VSCode
 2. Open the Command Palette with `Ctrl+Shift+P`
 3. Run `>Dev Containers: Reopen in Container`
+
+4. Start Backend:
+
+   1. Run `dotnet restore`
+   2. Run `dotnet watch run`
+
+5. Start Frontend:
+
+   1. Run `pnpm i`
+   2. Run `pnpm run dev`
+
+6. Open `localhost:5173` on Host Device
