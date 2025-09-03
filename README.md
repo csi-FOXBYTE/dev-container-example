@@ -86,6 +86,8 @@ and what settings and extensions VSCode uses:
 ### Benefits
 
 - All Developers have the same development environment
+- Important Settings can be set for all developers automatically
+- Installed Extensions don't suddendly format or interpret the code differently
 - Setup ist fast and easy
 - No additional software is required on the Host System
 - No more "works on my machine" bugs
