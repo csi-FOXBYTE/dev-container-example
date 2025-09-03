@@ -2,9 +2,6 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-ARG GIT_NAME
-ARG GIT_EMAIL
-
 RUN apt-get update && apt-get install -y \
     curl \
     git \
@@ -31,8 +28,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && rm -rf /var/lib/apt/lists/*
 
 # Allow git to work inside workspace
-RUN git config --system --add safe.directory '*' \
- && git config --global user.name "${GIT_NAME}" \
- && git config --global user.email "${GIT_EMAIL}"
+RUN git config --system --add safe.directory '*'
 
 WORKDIR /workspace
