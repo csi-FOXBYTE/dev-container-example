@@ -1,11 +1,11 @@
 # VSCode Dev Container setup Example
 
-This is an example of how a devcontainer setup can look like.
+This is an example of how a devcontainer setup can look like using a ASP .Net Backend and a Vite React Frontend.
 
 ## Requirements
 
 - Docker CLI installed
-- VSCode with the Dev Containers Extension
+- VSCode with the [Dev Containers Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 ## How to run
 
