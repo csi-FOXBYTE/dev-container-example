@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  myapp-dev:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    ports:
+      - '8080:8080'
+      - '5173:5173'
+    depends_on:
+      myapp-db:
+        condition: service_healthy
+    environment:
+      DB_HOST: myapp-db
+      DB_PORT: '5432'
+      DB_USER: app
+      DB_PASSWORD: app
+      DB_NAME: appdb
+
+  myapp-db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: appdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U app -d appdb']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+
+volumes:
+  pgdata:

@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": "MyAppBackend"
+    },
+    {
+      "path": "MyAppFrontend"
+    }
+  ],
+  "settings": {
+    "dotnet.defaultProject": "${workspaceFolder:MyAppBackend}/MyAppBackend.csproj"
+  }
+}

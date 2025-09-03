@@ -1,0 +1,93 @@
+{
+  "name": "TemplateApp",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "myapp-dev",
+  "workspaceFolder": "/workspace",
+  "runServices": ["myapp-dev", "myapp-db"],
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "josefpihrt-vscode.roslynator",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "editorconfig.editorconfig",
+        "ms-vscode.vscode-typescript-next"
+      ],
+      "settings": {
+        // ---- Global editor hygiene ----
+        "files.eol": "\n",
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "always",
+          "source.fixAll.eslint": "always"
+        },
+
+        // ---- TypeScript / JavaScript via Prettier + ESLint ----
+        "typescript.tsdk": "/workspace/node_modules/typescript/lib",
+        "prettier.endOfLine": "lf",
+        "prettier.tabWidth": 2,
+        "prettier.useTabs": false,
+        "prettier.singleQuote": true,
+        "prettier.trailingComma": "all",
+        "prettier.printWidth": 100,
+        "prettier.semi": true,
+
+        // Let Prettier handle formatting (disable built-ins)
+        "typescript.format.enable": false,
+        "javascript.format.enable": false,
+        "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[typescriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+        "[javascriptreact]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        },
+
+        // ---- C# formatting ----
+        // Use the C# extension as the default formatter for .cs files.
+        // Keep conventional tab width of 4 for C# while preserving LF endings.
+        "[csharp]": {
+          "editor.defaultFormatter": "ms-dotnettools.csharp",
+          "editor.tabSize": 4,
+          "editor.formatOnSave": true
+        },
+
+        // ---- Your original OmniSharp/Roslyn settings ----
+        "omnisharp.enableRoslynAnalyzers": true,
+        "omnisharp.enableEditorConfigSupport": true,
+        "omnisharp.analyzeOpenDocumentsOnly": false,
+
+        // ---- UX niceties ----
+        "problems.showCurrentInStatus": true
+      }
+    }
+  },
+  "portsAttributes": {
+    "5173": {
+      "label": "react"
+    },
+    "8080": {
+      "label": "api"
+    }
+  }
+}
