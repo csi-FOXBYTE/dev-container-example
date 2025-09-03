@@ -24,3 +24,12 @@ This is an example of how a devcontainer setup can look like.
    2. Run `pnpm run dev`
 
 6. Open `localhost:5173` on Host Device
+
+## Setup Git
+
+To setup git run
+
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+
+There is no further Authentication needed, the Host device is responsible for that.
